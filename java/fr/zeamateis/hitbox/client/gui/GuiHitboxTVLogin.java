@@ -187,4 +187,12 @@ public class GuiHitboxTVLogin extends GuiScreen {
 
 		super.drawScreen(p_73863_1_, p_73863_2_, p_73863_3_);
 	}
+
+	/**
+	 * Returns true if this GUI should pause the game when it is displayed in
+	 * single-player
+	 */
+	public boolean doesGuiPauseGame() {
+		return false;
+	}
 }
