@@ -18,10 +18,6 @@ public class Utils {
 
 	public static final String MODID = "hitboxmod", NAME = "Hitbox.tv Mod", VERSION = "0.0.1";
 
-	public static String setHitboxUsername(String username) {
-		return username;
-	}
-
 	public static BufferedReader getUrls(URL urlStream) {
 		try {
 			return new BufferedReader(new InputStreamReader(urlStream.openStream(), "UTF-8"));

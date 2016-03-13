@@ -1,21 +1,10 @@
 package fr.zeamateis.hitbox.client.gui;
 
-import java.awt.image.BufferedImage;
-import java.util.Map;
-
-import org.lwjgl.opengl.GL11;
-
-import com.google.common.collect.Maps;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import fr.zeamateis.hitbox.common.core.HitboxTVCore;
 import fr.zeamateis.hitbox.common.utils.Utils;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
-import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.ResourceLocation;
@@ -24,21 +13,7 @@ import net.minecraft.util.ResourceLocation;
 public class GuiHitboxTVInfo extends GuiScreen {
 
 	String streamingViewers, channelTotalViews, gamePlayed, followers, liveTitle;
-	int imgWidth, imgHeight;
 	boolean isStreaming;
-
-	@SideOnly(Side.CLIENT)
-	private static Map<String, DynamicTexture> images = Maps.newHashMap();
-
-	@SideOnly(Side.CLIENT)
-	public static void addTexture(String name, BufferedImage image) {
-		images.put(name, new DynamicTexture(image));
-	}
-
-	@SideOnly(Side.CLIENT)
-	public static void bindTexture(String name) {
-		GL11.glBindTexture(GL11.GL_TEXTURE_2D, images.get(name).getGlTextureId());
-	}
 
 	/**
 	 * Adds the buttons (and other controls) to the screen in question.
@@ -47,47 +22,10 @@ public class GuiHitboxTVInfo extends GuiScreen {
 		this.buttonList.clear();
 		this.isStreaming = HitboxTVCore.getData().getIsStreaming();
 		this.liveTitle = HitboxTVCore.getData().getHitboxStreamingTitle();
-		/*
-		 * if (HitboxTVCore.getData().getHitboxChannelThumbnail() != null &&
-		 * this.isStreaming) { try { backgroundURL = new
-		 * URL("http://edge.sf.hitbox.tv" +
-		 * HitboxTVCore.getData().getHitboxChannelThumbnail());
-		 * addTexture("backgroundChannel", ImageIO.read(backgroundURL));
-		 * imgWidth = ImageIO.read(backgroundURL).getWidth(); imgHeight =
-		 * ImageIO.read(backgroundURL).getHeight(); } catch (IOException e) {
-		 * e.printStackTrace(); } }
-		 */
 		this.streamingViewers = I18n.format("live.actualViewers") + " : " + HitboxTVCore.getData().getHitboxSreamingViews().replace("\"", "");
 		this.channelTotalViews = I18n.format("channel.totalViews") + " : " + HitboxTVCore.getData().getHitboxTotalViews().replace("\"", "");
 		this.followers = I18n.format("channel.followers") + " : " + HitboxTVCore.getData().getHitboxFollowers().replace("\"", "");
 		this.gamePlayed = HitboxTVCore.getData().getHitboxStreamingGame();
-	}
-
-	protected void actionPerformed(GuiButton button) {
-		switch (button.id) {
-		case 0:
-		case 1:
-		}
-	}
-
-	public static void renderBackGround(Minecraft mc, String background, double zLevel) {
-		GL11.glViewport(0, 0, 256, 256);
-		bindTexture(background);
-		GL11.glDisable(GL11.GL_TEXTURE_2D);
-		GL11.glEnable(GL11.GL_TEXTURE_2D);
-		GL11.glViewport(0, 0, mc.displayWidth, mc.displayHeight);
-		Tessellator tessellator = Tessellator.instance;
-		tessellator.startDrawingQuads();
-		GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MIN_FILTER, GL11.GL_LINEAR);
-		GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MAG_FILTER, GL11.GL_LINEAR);
-		tessellator.setColorRGBA_F(1.0F, 1.0F, 1.0F, 1.0F);
-		int k = mc.currentScreen.width;
-		int l = mc.currentScreen.height;
-		tessellator.addVertexWithUV(0, 0, zLevel, 0, 0);
-		tessellator.addVertexWithUV(0, l, zLevel, 0, 1);
-		tessellator.addVertexWithUV(k, l, zLevel, 1, 1);
-		tessellator.addVertexWithUV(k, 0, zLevel, 1, 0);
-		tessellator.draw();
 	}
 
 	/**

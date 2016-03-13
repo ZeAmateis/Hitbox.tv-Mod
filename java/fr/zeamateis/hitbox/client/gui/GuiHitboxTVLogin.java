@@ -56,7 +56,7 @@ public class GuiHitboxTVLogin extends GuiScreen {
 	 */
 	public void initGui() {
 		Keyboard.enableRepeatEvents(true);
-		this.buttonList.clear();// GuiGameOver
+		this.buttonList.clear();
 
 		this.buttonList.add(new GuiButton(0, this.width / 2 + 65, this.height / 2 + 75, 50, 20, I18n.format("gui.back")));
 		this.buttonList.add(new GuiButton(1, this.width / 2 + 30, this.height / 2 - 5, 70, 20, I18n.format("gui.hitbox.login")));
@@ -168,7 +168,7 @@ public class GuiHitboxTVLogin extends GuiScreen {
 
 		if (HitboxTVLogin.isLogged())
 			this.fontRendererObj.drawString(loggedAs, this.width / 2 - this.fontRendererObj.getStringWidth(loggedAs) / 2, this.height / 2 - 20, 0x00AD06);
-		else// GuiMainMenu
+		else
 			this.fontRendererObj.drawString(notLogged, this.width / 2 - this.fontRendererObj.getStringWidth(notLogged) / 2, this.height / 2 - 20, 0xF21111);
 
 		if (!this.username.isFocused() && this.username.getText().length() <= 0)// GuiMainMenu
@@ -181,5 +181,13 @@ public class GuiHitboxTVLogin extends GuiScreen {
 			this.fontRendererObj.drawString(I18n.format("gui.hitbox.login.channelName"), this.width / 2 - 97, this.height / 2 + 65, 0xC7C7C7);
 
 		super.drawScreen(p_73863_1_, p_73863_2_, p_73863_3_);
+	}
+
+	/**
+	 * Returns true if this GUI should pause the game when it is displayed in
+	 * single-player
+	 */
+	public boolean doesGuiPauseGame() {
+		return false;
 	}
 }
