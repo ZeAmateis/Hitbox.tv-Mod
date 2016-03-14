@@ -1,0 +1,59 @@
+﻿#KEYBINDING
+
+key.categories.hitbox=Hitbox.tv
+hitboxMenu.key=Hitbox.tv Menu
+
+#LIVE STREAM
+
+live.actualViewers=Spectator(s) Count
+live.offline=is offline
+live.online=is online
+
+#CHANNEL
+
+channel.totalViews=Total channel views
+channel.errorName=Channel Name Error
+channel.errorNameMSG=Sorry, but the channel name are incorect ! Try fix it in the config file !
+channel.followers=Follower(s)
+
+#COMMANDS
+
+commands.hitbox.msg.usage=Type /hitbox msg [Your Message]
+commands.hitbox.msg=(§aHitboxTV§r) <%s> %s
+commands.hitbox.whisper.usage=Type /hitbox pm <Recipent> [Your Message]
+commands.hitbox.whisper.confirm=(§aHitboxTV§r) Private message send to %s
+commands.hitbox.whisper.sendYou=(§aHitboxTV§r) %s send you : %s
+commands.hitbox.timeout.usage=Type /hitbox timeout <Username to Timeout> [Time in Seconds]
+commands.hitbox.timeout.confirm=(§aHitboxTV§r) %s has been timed out for %s seconds
+commands.hitbox.ban.usage=Type /hitbox ban <Username to Ban>
+commands.hitbox.ban.confirm=(§aHitboxTV§r) §4%s has been banned
+commands.hitbox.unban.usage=Type /hitbox unban <Username to Unban>
+commands.hitbox.unban.confirm=(§aHitboxTV§r) %s has been unbanned
+commands.hitbox.add-modo.confirm=(§aHitboxTV§r) %s has been set to moderator
+commands.hitbox.add-modo.usage=Type /hitbox add-modo [Username] to add it to the rank of moderator
+commands.hitbox.rm-modo.confirm=(§aHitboxTV§r) Removed %s as moderator
+commands.hitbox.rm-modo.usage=Type /hitbox rm-modo [Username] to remove it from the moderator(s)
+commands.hitbox.slowmode.confirm=(§aHitboxTV§r) Slow-Mode set to %s seconds
+commands.hitbox.slowmode-off.confirm=(§aHitboxTV§r) Slow-Mode desactivated
+commands.hitbox.slowmode.usage=Type /hitbox slowmode <Time in seconds> so set the slow-mode in chat
+commands.hitbox.submode-on.confirm=(§aHitboxTV§r) 'Subscriber Mode Only' activated
+commands.hitbox.submode-off.confirm=(§aHitboxTV§r) 'Subscriber Mode Only' desactivated
+commands.hitbox.submode.usage=Type /hitbox submode <on / off> to activate or not the 'Subscriber Mode Only'
+commands.hitbox.exit.usage=Type /hitbox exit to logout of hitbox.tv
+commands.hitbox.exit.success=(§aHitboxTV§r) Logged out of Hitbox.tv
+
+commands.hitbox.login.try=(§aHitboxTV§r) Login in to Hitbox.tv...
+commands.hitbox.login.success=(§aHitboxTV§r) Login to Hitbox.tv success !
+commands.hitbox.login.failed=(§aHitboxTV§r) Login to Hitbox.tv failed !
+commands.hitbox.login.failed=.credentials=(§aHitboxTV§r) Login to Hitbox.tv failed, wrong credentials ! Try Again !
+commands.hitbox.login.usage=Press 'H' (by default) key to login in your Hitbox.tv Account
+
+#GUI
+
+gui.hitbox.login.username=Username
+gui.hitbox.login.password=Password
+gui.hitbox.login.channelName=Channel Name
+gui.hitbox.login=Log in
+gui.hitbox.login.logged=Logged as %s
+gui.hitbox.login.notLogged=Not logged
+gui.hitbox.channel.info=Channel Info

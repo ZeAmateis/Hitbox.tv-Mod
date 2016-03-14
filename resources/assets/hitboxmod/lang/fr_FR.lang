@@ -1,0 +1,59 @@
+﻿#KEYBINDING
+
+key.categories.hitbox=Hitbox.tv
+hitboxMenu.key=Menu Hitbox.tv
+
+#LIVE STREAM
+
+live.actualViewers=Spectateur(s) Acuel(s)
+live.offline=est hors ligne
+live.online=est en ligne
+
+#CHANNEL
+
+channel.totalViews=Vues Totales de la chaîne
+channel.errorName=Nom de chaîne incorrect
+channel.errorNameMSG=Oups, mais le nom de la chaîne est incorrect ! Modifiez le nom dans le fichier config !
+channel.followers=Follower(s)
+
+#COMMANDS
+
+commands.hitbox.msg.usage=Tapez /hitbox msg [Votre Message]
+commands.hitbox.msg=(§aHitboxTV§r) <%s> %s
+commands.hitbox.whisper.usage=Tapez /hitbox pm <Destinataire> [Votre Message]
+commands.hitbox.whisper.confirm=(§aHitboxTV§r) Message privé envoyé à %s
+commands.hitbox.whisper.sendYou=(§aHitboxTV§r) %s send you : %s
+commands.hitbox.timeout.usage=Tapez /hitbox timeout <Pseudonyme à kicker> [Durée en Secondes]
+commands.hitbox.timeout.confirm=(§aHitboxTV§r) %s a été kick pendant %s seconds
+commands.hitbox.ban.usage=Tapez /hitbox ban <Pseudonyme à Bannir>
+commands.hitbox.ban.confirm=(§aHitboxTV§r) §4%s a été banni
+commands.hitbox.unban.usage=Tapez /hitbox unban <Pseudonyme à débannir>
+commands.hitbox.unban.confirm=(§aHitboxTV§r) %s a été débanni
+commands.hitbox.add-modo.confirm=(§aHitboxTV§r) %s a été promu modérateur
+commands.hitbox.add-modo.usage=Tapez /hitbox add-modo [Pseudonyme] pour ajouter la personne au rang de modérateur
+commands.hitbox.rm-modo.confirm=(§aHitboxTV§r) %s n'est plus modérateur
+commands.hitbox.rm-modo.usage=Tapez /hitbox rm-modo [Pseudonyme] pour l'enlever de la liste des modérateurs
+commands.hitbox.slowmode.confirm=(§aHitboxTV§r) Slow-Mode défini sur %s secondes
+commands.hitbox.slowmode-off.confirm=(§aHitboxTV§r) Slow-Mode désactivé
+commands.hitbox.slowmode.usage=Tapez /hitbox slowmode <Temps en secondes> pour activer le slow-mode dans le tchat
+commands.hitbox.submode-on.confirm=(§aHitboxTV§r) 'Subscriber Mode Only' Activé
+commands.hitbox.submode-off.confirm=(§aHitboxTV§r) 'Subscriber Mode Only' Desactivé
+commands.hitbox.submode.usage=Tapez /hitbox submode <on / off> pour activer ou non le 'Subscriber Mode Only'
+commands.hitbox.exit.usage=Tapez /hitbox exit (Vous serez déconnecté d'Hitbox.tv)
+commands.hitbox.exit.success=(§aHitboxTV§r) Déconnecté d'Hitbox.tv
+
+commands.hitbox.login.try=(§aHitboxTV§r) Connexion à Hitbox.tv...
+commands.hitbox.login.success=(§aHitboxTV§r) Connexion à Hitbox.tv effectuée !
+commands.hitbox.login.failed=(§aHitboxTV§r) Connexion à Hitbox.tv échouée !
+commands.hitbox.login.failed=.credentials=(§aHitboxTV§r) Connexion à Hitbox.tv échouée, identifiants incorrects ! Rééssayez !
+commands.hitbox.login.usage=Pressez la touche 'H' (par défaut) pour vous connecter à votre compte Hitbox.tv
+
+#GUI
+
+gui.hitbox.login.username=Nom d'utilisateur
+gui.hitbox.login.password=Mot de passe
+gui.hitbox.login.channelName=Nom de chaine
+gui.hitbox.login=Connexion
+gui.hitbox.login.logged=Connecté en tant que %s
+gui.hitbox.login.notLogged=Déconnecté
+gui.hitbox.channel.info=Info Chaîne
