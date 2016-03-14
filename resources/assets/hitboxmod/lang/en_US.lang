@@ -12,8 +12,7 @@ live.online=is online
 #CHANNEL
 
 channel.totalViews=Total channel views
-channel.errorName=Channel Name Error
-channel.errorNameMSG=Sorry, but the channel name are incorect ! Try fix it in the config file !
+channel.invalid=(§aHitboxTV§r) Sorry, but the channel name are incorrect !
 channel.followers=Follower(s)
 
 #COMMANDS

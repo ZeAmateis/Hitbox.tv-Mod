@@ -122,7 +122,7 @@ public class TchatReceiverCore extends WebSocketClient {
 		}
 
 		if (text.contains("<img src=\"")) {
-			text = text.replace(text.substring(0, text.length()), "<Unsupported Emoji>");
+			text = text.replace(text.substring(0, text.length()), "<Unsupported Image>");
 		} else if (text.contains("&amp;")) {
 			text = text.replace("&amp;", "&");
 		}

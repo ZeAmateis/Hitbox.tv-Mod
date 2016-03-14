@@ -4,8 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -32,9 +30,9 @@ public class HitboxTVData {
 		return isTokenEnabled;
 	}
 
-	public boolean isHitboxChannelNameCorrect() {
+	public boolean isHitboxChannelNameCorrect(String channelName) {
 		try {
-			URL channelURL = new URL(Utils.hitboxAPI + "media/status/" + getHitboxChannelName());
+			URL channelURL = new URL(Utils.hitboxAPI + "media/status/" + channelName);
 
 			obj = Utils.getParser().parse(Utils.getUrls(channelURL).readLine());
 
@@ -100,19 +98,22 @@ public class HitboxTVData {
 		hitboxChannel = hitboxChan;
 	}
 
-	private static final List<JsonReader> list = new ArrayList<JsonReader>();
-
 	public String getHitboxStreamingTitle() {
 		if (getIsStreaming() == true) {
 			try {
 				stramingTitle = new URL(Utils.hitboxAPI + "media/live/" + getHitboxChannelName());
 
-				obj = Utils.getParser().parse(Utils.getUrls(stramingTitle).readLine());
+				JsonReader reader = new JsonReader(new InputStreamReader(stramingTitle.openStream()));
+				JsonParser parser = new JsonParser();
+
+				obj = parser.parse(reader);
+
 				JsonObject jsonObject = (JsonObject) obj;
+				reader.setLenient(true);
 
-				JsonArray media_status = jsonObject.get("livestream").getAsJsonArray();
+				JsonArray media_title = jsonObject.get("livestream").getAsJsonArray();
 
-				return media_status.get(0).getAsJsonObject().get("media_status").getAsString();
+				return media_title.get(0).getAsJsonObject().get("media_status").getAsString();
 			} catch (JsonSyntaxException e) {
 				e.printStackTrace();
 			} catch (IOException e) {
