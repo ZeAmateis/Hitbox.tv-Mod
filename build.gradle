@@ -22,7 +22,7 @@ plugins {
 */
 version = "1.8.9-0.0.1"
 group= "fr.zeamateis" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "HItbox.tv Mod"
+archivesBaseName = "Hitbox.tv Mod"
 
 minecraft {
     version = "1.8.9-11.15.1.1764"
