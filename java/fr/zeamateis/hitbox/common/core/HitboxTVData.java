@@ -32,9 +32,9 @@ public class HitboxTVData {
 		return isTokenEnabled;
 	}
 
-	public boolean isHitboxChannelNameCorrect() {
+	public boolean isHitboxChannelNameCorrect(String channelName) {
 		try {
-			URL channelURL = new URL(Utils.hitboxAPI + "media/status/" + getHitboxChannelName());
+			URL channelURL = new URL(Utils.hitboxAPI + "media/status/" + channelName);
 
 			obj = Utils.getParser().parse(Utils.getUrls(channelURL).readLine());
 

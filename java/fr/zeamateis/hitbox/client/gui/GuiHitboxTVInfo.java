@@ -51,17 +51,19 @@ public class GuiHitboxTVInfo extends GuiScreen {
 		String channelOffline = EnumChatFormatting.UNDERLINE + HitboxTVCore.getData().getHitboxChannelName() + " " + I18n.format("live.offline");
 		String channelOnline = EnumChatFormatting.UNDERLINE + HitboxTVCore.getData().getHitboxChannelName() + " " + I18n.format("live.online");
 
-		if (this.isStreaming == true) {
+		if (this.isStreaming) {
 			// Channel Name
 			this.fontRendererObj.drawString(EnumChatFormatting.GREEN + channelOnline, this.width / 2 - this.fontRendererObj.getStringWidth(channelOnline) / 2, this.height / 2 - 78, -1);
 
 			// Live Title
+			// TODO Split title
 			this.fontRendererObj.drawString(EnumChatFormatting.UNDERLINE + liveTitle, this.width / 2 - this.fontRendererObj.getStringWidth(liveTitle) / 2, this.height / 2 - 50, -1);
+
+			// Game Played
+			this.fontRendererObj.drawString(EnumChatFormatting.ITALIC + gamePlayed, this.width / 2 - this.fontRendererObj.getStringWidth(gamePlayed) / 2, this.height / 2 - 65, -1);
 
 			// Total Viewers on live
 			this.fontRendererObj.drawString(streamingViewers, this.width / 2 - 118, this.height / 2 - 25, -1);
-			// Game Played
-			this.fontRendererObj.drawString(EnumChatFormatting.ITALIC + gamePlayed, this.width / 2 - this.fontRendererObj.getStringWidth(gamePlayed) / 2, this.height / 2 - 65, -1);
 		} else {
 			this.fontRendererObj.drawString(EnumChatFormatting.RED + channelOffline, this.width / 2 - this.fontRendererObj.getStringWidth(channelOffline) / 2, this.height / 2 - 78, -1);
 		}

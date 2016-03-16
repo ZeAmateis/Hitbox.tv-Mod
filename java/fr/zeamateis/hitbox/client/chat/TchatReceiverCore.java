@@ -33,8 +33,10 @@ public class TchatReceiverCore extends WebSocketClient {
 		super(new URI("ws://" + IP + "/socket.io/1/websocket/" + Utils.getID(IP)), new Draft_10());
 		this.channel = channel;
 		this.sender = sender;
-		connectBlocking();
-		joinChannel(channel.toLowerCase());
+		if (HitboxTVCore.getData().isHitboxChannelNameCorrect(channel)) {
+			connectBlocking();
+			joinChannel(channel.toLowerCase());
+		}
 	}
 
 	public void onOpen(ServerHandshake handshakedata) {

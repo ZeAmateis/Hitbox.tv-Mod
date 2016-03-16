@@ -98,14 +98,19 @@ public class GuiHitboxTVLogin extends GuiScreen {
 		case 1:
 			this.mc.thePlayer.addChatMessage(new ChatComponentTranslation("commands.hitbox.login.try"));
 			try {
-				HitboxTVCore.getData().setHitboxUsername(this.username.getText());
-				HitboxTVCore.getData().setHitboxPassword(this.password.getText());
-				HitboxTVCore.getData().setHitboxChannel(this.channelName.getText());
+				if (HitboxTVCore.getData().isHitboxChannelNameCorrect(this.channelName.getText())) {
+					HitboxTVCore.getData().setHitboxUsername(this.username.getText());
+					HitboxTVCore.getData().setHitboxPassword(this.password.getText());
+					HitboxTVCore.getData().setHitboxChannel(this.channelName.getText());
 
-				HitboxTVCore.getData().tokenLogin(true);
-				HitboxTVCore.getToken().generateToken();
+					HitboxTVCore.getData().tokenLogin(true);
+					HitboxTVCore.getToken().generateToken();
 
-				HitboxTVLogin.init();
+					HitboxTVLogin.init();
+				} else {
+					this.mc.displayGuiScreen(this.parentScreen);
+					this.mc.thePlayer.addChatMessage(new ChatComponentTranslation("channel.invalid"));
+				}
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {
@@ -176,7 +181,7 @@ public class GuiHitboxTVLogin extends GuiScreen {
 		else
 			this.fontRendererObj.drawString(notLogged, this.width / 2 - this.fontRendererObj.getStringWidth(notLogged) / 2, this.height / 2 - 20, 0xF21111);
 
-		if (!this.username.isFocused() && this.username.getText().length() <= 0)// GuiMainMenu
+		if (!this.username.isFocused() && this.username.getText().length() <= 0)
 			this.fontRendererObj.drawString(I18n.format("gui.hitbox.login.username"), this.width / 2 - 97, this.height / 2 - 1, 0xC7C7C7);
 
 		if (!this.password.isFocused() && this.password.getText().length() <= 0)
