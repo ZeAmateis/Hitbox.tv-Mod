@@ -58,3 +58,4 @@ gui.hitbox.login.notLogged=Déconnecté
 gui.hitbox.channel.info=Info Chaîne
 
 config.hitbox=Configuration Hitbox.tv Mod
+config.hitbox.chatHistoric='true' pour activer les logs du tchat
