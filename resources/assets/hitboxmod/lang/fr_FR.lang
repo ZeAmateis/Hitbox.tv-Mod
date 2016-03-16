@@ -56,3 +56,5 @@ gui.hitbox.login=Connexion
 gui.hitbox.login.logged=Connecté en tant que %s
 gui.hitbox.login.notLogged=Déconnecté
 gui.hitbox.channel.info=Info Chaîne
+
+config.hitbox=Configuration Hitbox.tv Mod

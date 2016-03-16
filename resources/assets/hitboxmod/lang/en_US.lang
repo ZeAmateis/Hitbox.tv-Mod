@@ -56,3 +56,6 @@ gui.hitbox.login=Log in
 gui.hitbox.login.logged=Logged as %s
 gui.hitbox.login.notLogged=Not logged
 gui.hitbox.channel.info=Channel Info
+
+config.hitbox=Hitbox.tv Mod Configuration
+config.hitbox.chatHistoric=Set true to activate an historic of the chat
