@@ -29,7 +29,6 @@ public class HitboxTVCore {
 	private static HitboxTVCore instance;
 
 	public static File chatLogsDir;
-	static File loginTempFile;
 
 	public HitboxTVCore getInstance() {
 		return instance;
