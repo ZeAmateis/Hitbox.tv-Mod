@@ -10,7 +10,7 @@
 :apiClasses UP-TO-DATE
 :sourceMainJava
 :compileJavawarning: [options] bootstrap class path not set in conjunction with -source 1.6
-Note: C:\Users\TheAmateis\Documents\GitHub\Hitbox.tv-Mod\build\sources\java\fr\zeamateis\hitbox\client\gui\GuiHitboxTVLogin.java uses unchecked or unsafe operations.
+Note: Some input files use unchecked or unsafe operations.
 Note: Recompile with -Xlint:unchecked for details.
 1 warning
 
@@ -32,4 +32,4 @@ Note: Recompile with -Xlint:unchecked for details.
 
 BUILD SUCCESSFUL
 
-Total time: 28.769 secs
+Total time: 1 mins 33.784 secs
