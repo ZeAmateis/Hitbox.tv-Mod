@@ -12,8 +12,7 @@ live.online=est en ligne
 #CHANNEL
 
 channel.totalViews=Vues Totales de la chaîne
-channel.errorName=Nom de chaîne incorrect
-channel.errorNameMSG=Oups, mais le nom de la chaîne est incorrect ! Modifiez le nom dans le fichier config !
+channel.invalid=(§aHitboxTV§r) Oups, mais le nom de la chaîne est incorrect ! Modifiez le nom dans le fichier config !
 channel.followers=Follower(s)
 
 #COMMANDS
@@ -57,3 +56,6 @@ gui.hitbox.login=Connexion
 gui.hitbox.login.logged=Connecté en tant que %s
 gui.hitbox.login.notLogged=Déconnecté
 gui.hitbox.channel.info=Info Chaîne
+
+config.hitbox=Configuration Hitbox.tv Mod
+config.hitbox.chatHistoric='true' pour activer les logs du tchat
