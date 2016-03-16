@@ -33,8 +33,10 @@ public class TchatReceiverCore extends WebSocketClient {
 		super(new URI("ws://" + IP + "/socket.io/1/websocket/" + Utils.getID(IP)), new Draft_10());
 		this.channel = channel;
 		this.sender = sender;
-		connectBlocking();
-		joinChannel(channel.toLowerCase());
+		if (HitboxTVCore.getData().isHitboxChannelNameCorrect(channel)) {
+			connectBlocking();
+			joinChannel(channel.toLowerCase());
+		}
 	}
 
 	public void onOpen(ServerHandshake handshakedata) {
@@ -122,7 +124,7 @@ public class TchatReceiverCore extends WebSocketClient {
 		}
 
 		if (text.contains("<img src=\"")) {
-			text = text.replace(text.substring(0, text.length()), "<Unsupported Emoji>");
+			text = text.replace(text.substring(0, text.length()), "<Unsupported Image>");
 		} else if (text.contains("&amp;")) {
 			text = text.replace("&amp;", "&");
 		}

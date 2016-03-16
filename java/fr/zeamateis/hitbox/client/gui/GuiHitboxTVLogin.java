@@ -98,19 +98,25 @@ public class GuiHitboxTVLogin extends GuiScreen {
 		case 1:
 			this.mc.thePlayer.addChatMessage(new ChatComponentTranslation("commands.hitbox.login.try"));
 			try {
-				HitboxTVCore.getData().setHitboxUsername(this.username.getText());
-				HitboxTVCore.getData().setHitboxPassword(this.password.getText());
-				HitboxTVCore.getData().setHitboxChannel(this.channelName.getText());
+				if (HitboxTVCore.getData().isHitboxChannelNameCorrect(this.channelName.getText())) {
+					HitboxTVCore.getData().setHitboxUsername(this.username.getText());
+					HitboxTVCore.getData().setHitboxPassword(this.password.getText());
+					HitboxTVCore.getData().setHitboxChannel(this.channelName.getText());
 
-				HitboxTVCore.getData().tokenLogin(true);
-				HitboxTVCore.getToken().generateToken();
+					HitboxTVCore.getData().tokenLogin(true);
+					HitboxTVCore.getToken().generateToken();
 
-				HitboxTVLogin.init();
+					HitboxTVLogin.init();
+				} else {
+					this.mc.displayGuiScreen(this.parentScreen);
+					this.mc.thePlayer.addChatMessage(new ChatComponentTranslation("channel.invalid"));
+				}
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {
 				this.mc.displayGuiScreen(this.parentScreen);
 			}
+
 			break;
 		case 2:
 			try {
