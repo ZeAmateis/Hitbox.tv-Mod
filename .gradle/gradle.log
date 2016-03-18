@@ -28,13 +28,13 @@ Note: Recompile with -Xlint:deprecation for details.
 :testClasses UP-TO-DATE
 :test UP-TO-DATE
 :extractMcpData SKIPPED
-:extractMcpMappings
+:extractMcpMappings SKIPPED
 :getVersionJson
 :extractUserdev UP-TO-DATE
 :genSrgs SKIPPED
 :reobfJar
 :extractRangemapReplacedMain
-C:\Users\TheAmateis\Desktop\Modding\JAVA\HitboxTChat 1.9\build\sources\main\java
+C:\Users\TheAmateis\Documents\GitHub\Hitbox.tv-Mod\build\sources\main\java
 :retromapReplacedMain
 remapping source...
 :sourceJar
@@ -44,4 +44,4 @@ remapping source...
 
 BUILD SUCCESSFUL
 
-Total time: 1 mins 25.575 secs
+Total time: 1 mins 39.77 secs
