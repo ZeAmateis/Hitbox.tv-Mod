@@ -20,7 +20,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-@Mod(modid = Utils.MODID, version = Utils.VERSION, name = Utils.NAME)
+@Mod(modid = Utils.MODID, version = Utils.VERSION, name = Utils.NAME, guiFactory = Utils.GUICONFIG)
 public class HitboxTVCore {
 	@SidedProxy(clientSide = "fr.zeamateis.hitbox.proxy.ClientProxy", serverSide = "fr.zeamateis.hitbox.proxy.CommonProxy")
 	public static CommonProxy proxy;
