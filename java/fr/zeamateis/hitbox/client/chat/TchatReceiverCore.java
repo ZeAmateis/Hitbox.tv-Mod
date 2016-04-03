@@ -23,11 +23,13 @@ import net.minecraft.util.ChatComponentTranslation;
 public class TchatReceiverCore extends WebSocketClient {
 	public String channel;
 	boolean isConnexionClosed;
-	ICommandSender sender;
+	static ICommandSender sender;
 
 	DateFormat df = new SimpleDateFormat("MM-dd-yy_HH-mm");
 	Date today = Calendar.getInstance().getTime();
 	String date = df.format(today);
+
+	static String message;
 
 	public TchatReceiverCore(String channel, String IP, ICommandSender sender) throws Exception {
 		super(new URI("ws://" + IP + "/socket.io/1/websocket/" + Utils.getID(IP)), new Draft_10());
@@ -62,7 +64,6 @@ public class TchatReceiverCore extends WebSocketClient {
 			if (!this.isBuffer(obj)) {
 				if (this.getMethod(obj).equals("chatMsg")) {
 					this.sender.addChatMessage(new ChatComponentTranslation("commands.hitbox.msg", this.getName(obj), this.getMessage(obj)));
-
 					if (ConfigurationManager.chatHistoric == true) {
 						try {
 							File file = new File(HitboxTVCore.chatLogsDir + File.separator + HitboxTVCore.getData().getHitboxChannelName() + "-" + date + ".htclog");
@@ -109,14 +110,14 @@ public class TchatReceiverCore extends WebSocketClient {
 			return false;
 	}
 
-	public static String getName(JSONObject obj) {
+	public String getName(JSONObject obj) {
 		String name = "";
 		name = obj.getJSONObject("params").optString("name");
 
 		return name;
 	}
 
-	public static String getMessage(JSONObject obj) {
+	public String getMessage(JSONObject obj) {
 		String text = "";
 
 		if (obj.getString("method").equals("chatMsg")) {
@@ -124,7 +125,15 @@ public class TchatReceiverCore extends WebSocketClient {
 		}
 
 		if (text.contains("<img src=\"")) {
-			text = text.replace(text.substring(0, text.length()), "<Unsupported Image>");
+			text = text.replace("<div class=\"image\">", "").replace("<img src=\"", "");
+
+			if (text.contains("http://chatimages.hitbox.tv"))
+				text = text.substring(text.lastIndexOf("http://"), text.indexOf("\" hbx-width"));
+
+			if (text.contains("http://edge.sf.hitbox.tv/"))
+				// text = text.substring(text.lastIndexOf("http://"),
+				// text.indexOf("\" title"));
+				text = text.substring(text.lastIndexOf("\" title=\"") + 9, text.indexOf(" from "));
 		} else if (text.contains("&amp;")) {
 			text = text.replace("&amp;", "&");
 		}
@@ -138,5 +147,13 @@ public class TchatReceiverCore extends WebSocketClient {
 
 	public void setConnexionClosed(boolean isConnexionClosed) {
 		this.isConnexionClosed = isConnexionClosed;
+	}
+
+	public static String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 }

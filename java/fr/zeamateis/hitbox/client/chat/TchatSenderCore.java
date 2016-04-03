@@ -11,6 +11,7 @@ import fr.zeamateis.hitbox.common.core.HitboxTVCore;
 import fr.zeamateis.hitbox.common.utils.Utils;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.util.ChatComponentTranslation;
+import net.minecraft.util.EnumChatFormatting;
 
 public class TchatSenderCore extends WebSocketClient {
 
@@ -83,7 +84,7 @@ public class TchatSenderCore extends WebSocketClient {
 			JSONObject obj = new JSONObject(new JSONObject(message.substring(message.indexOf("{"))).getJSONArray("args").get(0).toString());
 
 			if (this.getMethod(obj).equals("directMsg")) {
-				this.sender.addChatMessage(new ChatComponentTranslation("commands.hitbox.whisper.sendYou", this.getName(obj), this.getDirectMessage(obj)));
+				this.sender.addChatMessage(new ChatComponentTranslation("commands.hitbox.whisper.sendYou", this.getName(obj), EnumChatFormatting.GRAY + this.getDirectMessage(obj)));
 			}
 		}
 	}
@@ -96,13 +97,17 @@ public class TchatSenderCore extends WebSocketClient {
 		e.printStackTrace();
 	}
 
+	public void subscriber() {
+		this.send("5:::{\"name\":\"message\",\"args\":[{\"method\":\"infoMsg\",\"params\":{\"text\":\"Test-Account just subscribed to this channel\",\"channel\":\"" + this.channel + "\",\"subscriber\":\"Test-Account\",\"type\":\"subChannel\",\"time\":1449986713}}]}");
+	}
+
 	public void joinChannel(String channel) {
 		this.send("5:::{\"name\":\"message\",\"args\":[{\"method\":\"joinChannel\",\"params\":{\"channel\":\"" + channel + "\",\"name\":\"" + HitboxTVCore.getData().getHitboxUsername() + "\",\"token\":\"" + HitboxTVCore.getToken().getHitboxToken() + "\",\"isAdmin\":false,\"notify\":true}}]}");
 		System.out.println("Channel Joined.");
 	}
 
 	public void sendMessage(String message) {
-		this.send("5:::{\"name\":\"message\",\"args\":[{\"method\":\"chatMsg\",\"params\":{\"channel\":\"" + this.channel + "\",\"name\":\"" + HitboxTVCore.getData().getHitboxUsername() + "\",\"nameColor\":\"FF0000\",\"text\":\"" + message + "\"}}]}");
+		this.send("5:::{\"name\":\"message\",\"args\":[{\"method\":\"chatMsg\",\"params\":{\"channel\":\"" + this.channel + "\",\"name\":\"" + HitboxTVCore.getData().getHitboxUsername() + "\",\"nameColor\":\"2E2E2E\",\"text\":\"" + message + "\"}}]}");
 		System.out.println("Message sent.");
 	}
 

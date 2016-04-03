@@ -21,6 +21,9 @@ public class HitboxTVData {
 
 	static boolean isTokenEnabled;
 
+	static int totalFollowers = 0, lastCheck = 0;
+	static String lastFollower = "";
+
 	public HitboxTVData tokenLogin(boolean enabled) {
 		isTokenEnabled = enabled;
 		return this;
