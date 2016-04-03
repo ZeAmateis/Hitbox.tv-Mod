@@ -11,6 +11,7 @@ import fr.zeamateis.hitbox.common.core.HitboxTVCore;
 import fr.zeamateis.hitbox.common.utils.Utils;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.util.ChatComponentTranslation;
+import net.minecraft.util.EnumChatFormatting;
 
 public class TchatSenderCore extends WebSocketClient {
 
@@ -83,7 +84,7 @@ public class TchatSenderCore extends WebSocketClient {
 			JSONObject obj = new JSONObject(new JSONObject(message.substring(message.indexOf("{"))).getJSONArray("args").get(0).toString());
 
 			if (this.getMethod(obj).equals("directMsg")) {
-				this.sender.addChatMessage(new ChatComponentTranslation("commands.hitbox.whisper.sendYou", this.getName(obj), this.getDirectMessage(obj)));
+				this.sender.addChatMessage(new ChatComponentTranslation("commands.hitbox.whisper.sendYou", this.getName(obj), EnumChatFormatting.GRAY + this.getDirectMessage(obj)));
 			}
 		}
 	}
