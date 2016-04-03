@@ -3,7 +3,7 @@
   "modid": "hitboxmod",
   "name": "Hitbox.tv Mod",
   "description": "A Minecraft Twitch mod like for Hitbox.tv streaming platform",
-  "version": "0.0.2",
+  "version": "0.3",
   "mcversion": "1.8.9",
   "url": "",
   "updateUrl": "",

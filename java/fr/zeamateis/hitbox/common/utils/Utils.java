@@ -16,7 +16,7 @@ public class Utils {
 	public static String hitboxAPI = "http://api.hitbox.tv/";
 	public static String hitboxImgAPI = "http://edge.sf.hitbox.tv/";
 
-	public static final String MODID = "hitboxmod", NAME = "Hitbox.tv Mod", VERSION = "0.0.1", GUICONFIG = "fr.zeamateis.hitbox.client.gui.GuiFactory";
+	public static final String MODID = "hitboxmod", NAME = "Hitbox.tv Mod", VERSION = "0.3", GUICONFIG = "fr.zeamateis.hitbox.client.gui.GuiFactory";
 
 	public static BufferedReader getUrls(URL urlStream) {
 		try {
