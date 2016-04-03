@@ -59,6 +59,7 @@ public class HitboxTVCore {
 		proxy.init();
 		ClientCommandHandler.instance.registerCommand(new CommandChatHitbox());
 		this.registerEvent(this);
+		// this.registerEvent(new GuiLinkNotifications());
 	}
 
 	@SubscribeEvent
