@@ -1,0 +1,16 @@
+[
+{
+  "modid": "hitboxmod",
+  "name": "Hitbox.tv Mod",
+  "description": "A Minecraft Twitch mod like for Hitbox.tv streaming platform",
+  "version": "0.3",
+  "mcversion": "1.10",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["ZeAmateis"],
+  "credits": "Thanks Hitbox staff, for your streaming platform !",
+  "logoFile": "/logo.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]
